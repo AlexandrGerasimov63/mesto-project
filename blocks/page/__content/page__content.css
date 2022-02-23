@@ -1,0 +1,9 @@
+.page__content{
+  max-width: 880px;
+  margin: 0 auto;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: #fff;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
