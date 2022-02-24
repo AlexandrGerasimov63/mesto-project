@@ -19,10 +19,10 @@
   src: url('./Inter/Inter-Medium.woff2') format("woff2"),
        url('./Inter/Inter-Medium.woff') format("woff");
 }
-/* @font-face {
+@font-face {
   font-family: 'Inter';
-  src: url('./Inter/Inter-ExtraBold.woff') format('woff'),
-       url('./Inter/Inter-ExtraBold.woff2') format('woff2');
+  src: url('./Inter/Inter-Black.woff') format('woff'),
+       url('./Inter/Inter-Black.woff2') format('woff2');
   font-weight: 900;
   font-display: swap;
-} */
+}

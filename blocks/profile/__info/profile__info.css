@@ -10,7 +10,7 @@
 }
 @media screen and (max-width:1024px){
   .profile__info{
-    padding: 0;
+    /* padding: 0; */
     margin: 0 auto;
     padding-top: 26px;
     gap: 7px 10px;
