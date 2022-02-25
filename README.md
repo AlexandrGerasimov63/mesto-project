@@ -22,4 +22,4 @@
 
 **Ссылка на проект:**
 
-[Mestro Russian](https://alexandrgerasimov63.github.io/mesto-project/)
+[Mesto Russian](https://alexandrgerasimov63.github.io/mesto-project/)
