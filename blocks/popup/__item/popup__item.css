@@ -1,14 +1,17 @@
-.form__item{
+.popup__item {
   border:none;
   box-sizing: border-box;
-  /* max-width: 358px; */
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,0.2);
   margin-top: 25px;
   padding-bottom: 10px;
+  font-size: 14px;
+  line-height: 17px;
+  color: black;
+  font-weight: normal;
 }
 
-.form__item::placeholder{
+.popup__item::placeholder {
   font-size: 14px;
   line-height: 17px;
   color: black;

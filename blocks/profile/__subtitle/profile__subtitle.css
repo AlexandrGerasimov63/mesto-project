@@ -1,18 +1,18 @@
-.profile__subtitle{
+.profile__subtitle {
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   margin: 0;
-
 }
+
 @media screen and (max-width:1024px) {
-  .profile__subtitle{
-    /* grid-column: 1/-1; */
+  .profile__subtitle {
     justify-self: center;
   }
 }
-@media screen and (max-width:440px){
-  .profile__subtitle{
+
+@media screen and (max-width:440px) {
+  .profile__subtitle {
     font-size: 14px;
     line-height: 17px;
   }

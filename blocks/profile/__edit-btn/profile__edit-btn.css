@@ -1,4 +1,4 @@
-.profile__edit-btn{
+.profile__edit-btn {
   padding: 0;
   box-sizing: border-box;
   border: 1px solid #FFFFFF;
@@ -10,15 +10,17 @@
   background-image: url('../../../images/edit_Vector.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
   transition: opacity .5s ease;
 }
-.profile__edit-btn:hover{
+
+.profile__edit-btn:hover {
   opacity: 0.6;
 }
+
 @media screen and (max-width:400px) {
-  .profile__edit-btn{
+  .profile__edit-btn {
     width: 18px;
     height: 18px;
   }

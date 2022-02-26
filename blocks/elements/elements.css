@@ -1,16 +1,10 @@
-.elements{
+.elements {
   margin: 51px auto 0;
   width: 68.75%;
 }
-/* @media screen and (max-width:1043px) {
-  .elements{
-    width: calc(100% - 148px);
-  }
-} */
 
 @media screen and (max-width:520px) {
-  .elements{
-    /* width: calc(100% - 38px); */
+  .elements {
     margin: 36px auto 0;
   }
 }

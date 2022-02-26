@@ -1,4 +1,4 @@
-.profile{
+.profile {
   width: 68.75%;
   margin: 40px auto 0;
   display: flex;
@@ -6,12 +6,13 @@
 }
 
 @media screen and (max-width:1024px) {
-  .profile{
+  .profile {
     flex-direction: column;
   }
 }
+
 @media screen and (max-width:400px) {
-  .profile{
+  .profile {
     width: 100%;
   }
 }
