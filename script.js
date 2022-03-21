@@ -6,11 +6,16 @@ const likeBtn = document.querySelectorAll('.element__like-btn');
 const popup = document.querySelectorAll('.popup');
 const deleteBtn = document.querySelectorAll('.element__del-btn');
 
-console.log(addBtn);
+
 
 // ============================================================
 
 //Попап открытие и закрытие
+
+// function popupOpen (evt) {
+//   popup.classList.add('.popup_open')
+// };
+
 
 function OpenPopupEdit (){
   let popup = document.querySelector('.popup_type_edit');
@@ -108,18 +113,11 @@ popupFormAdd.addEventListener('submit', (evt)=>{
   evt.preventDefault();
   const inputName = document.getElementById('item-name');
   const inputUrl = document.getElementById('item-url');
-    // initialCards.unshift({
-  //   name: inputName,
-  //   link: inputUrl
-  // });
   const initialCardsElement = ElemTamplate.cloneNode(true);
 
   initialCardsElement.querySelector('.element__image').src = inputUrl.value;
   initialCardsElement.querySelector('.element__title').textContent = inputName.value;
 
-  // initialCardsElement.querySelector('.element__like-btn').addEventListener('click',(evt)=>{
-  //   evt.target.classList.toggle('.element__like_active-btn');
-  //   });
   activeCard(initialCardsElement)
   ElemList.prepend(initialCardsElement);
 
@@ -131,44 +129,4 @@ popupFormAdd.addEventListener('submit', (evt)=>{
 
 
 
-
-// ================================================================================
-
-//Добавляем лайки
-
-// let elementLikeBtn = document.querySelectorAll('.element__like-btn');
-// console.log(elementLikeBtn);
-
-// elementLikeBtn.forEach((item)=> {
-//   item.addEventListener('click',(evt)=> {
-//     evt.target.classList.toggle('element__like_active-btn');
-//   });
-// });
-
-// Удаление карточки
-
-deleteBtn.document.querySelectorAll('.element__del-btn').forEach((item)=>{
-  item.addEventListener('click', (evt)=>{
-    let delbtn = evt.target;
-    let card = delbtn.closest('.element');
-    card.remove();
-  })
-})
-
-
-
-// function deleteCard(evt) {
-//   console.log(evt);
-//   let deleteButton = evt.target;
-//    deleteButton.removeChild('element');
-//   // card.remove();
-// }
-
-// function deleteCard(evt) {
-//   let deleteButton = evt.target;
-//   let card = deleteButton.closest('.element');
-//   card.remove();
-// }
-
-// ==================================================================
 
