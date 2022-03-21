@@ -5,6 +5,7 @@ const closeBtn = document.querySelectorAll('.popup__close-btn');
 const likeBtn = document.querySelectorAll('.element__like-btn');
 const popup = document.querySelectorAll('.popup');
 const deleteBtn = document.querySelectorAll('.element__del-btn');
+
 console.log(addBtn);
 
 // ============================================================
@@ -89,18 +90,20 @@ initialCards.forEach(function(element){
 
   initialCardsElement.querySelector('.element__image').src = element.link;
   initialCardsElement.querySelector('.element__title').textContent = element.name;
-
+  activeCard(initialCardsElement);
   ElemList.append(initialCardsElement);
+  });
 
-  deleteBtn.forEach((btn)=>{
-    btn.addEventListener('click', () =>{
-      btn.parentElement.remove;
-      console.log(initialCards);
-    })
-  })
+  function activeCard (initialCardsElement) {
+    initialCardsElement.querySelector('.element__like-btn').addEventListener('click',(evt)=>{
+      evt.target.classList.toggle('.element__like_active-btn');
+      });
+    initialCardsElement.querySelector('.element__del-btn').addEventListener('click,', (evt)=>{
+      const delElement = evt.target.querySelector.closest('.element');
+      delElement.remove();
+    });
 
-});
-
+  };
 // Добавляем карточки
 
 const popupFormAdd = document.querySelector('.popup__form-add');
@@ -109,9 +112,7 @@ popupFormAdd.addEventListener('submit', (evt)=>{
   evt.preventDefault();
   const inputName = document.getElementById('item-name');
   const inputUrl = document.getElementById('item-url');
-  console.log(inputName);
-  console.log(inputUrl);
-  // initialCards.unshift({
+    // initialCards.unshift({
   //   name: inputName,
   //   link: inputUrl
   // });
@@ -120,34 +121,33 @@ popupFormAdd.addEventListener('submit', (evt)=>{
   initialCardsElement.querySelector('.element__image').src = inputUrl.value;
   initialCardsElement.querySelector('.element__title').textContent = inputName.value;
 
+  // initialCardsElement.querySelector('.element__like-btn').addEventListener('click',(evt)=>{
+  //   evt.target.classList.toggle('.element__like_active-btn');
+  //   });
+  activeCard(initialCardsElement)
   ElemList.prepend(initialCardsElement);
-
 
   inputName.value = '';
   inputUrl.value = '';
   closePopup();
   console.log(initialCards);
-});
-
-function addLike () {
-  likeBtn.forEach((item)=>{
-    item.addEventListener('click',(evt)=>{
-      evt.target.classList.toggle('.element__like_active-btn');
-    });
   });
-};
+
+
+
+
 // ================================================================================
 
 //Добавляем лайки
 
-let elementLikeBtn = document.querySelectorAll('.element__like-btn');
-console.log(elementLikeBtn);
+// let elementLikeBtn = document.querySelectorAll('.element__like-btn');
+// console.log(elementLikeBtn);
 
-elementLikeBtn.forEach((item)=> {
-  item.addEventListener('click',(evt)=> {
-    evt.target.classList.toggle('element__like_active-btn');
-  });
-});
+// elementLikeBtn.forEach((item)=> {
+//   item.addEventListener('click',(evt)=> {
+//     evt.target.classList.toggle('element__like_active-btn');
+//   });
+// });
 
 // Удаление карточки
 
@@ -158,6 +158,7 @@ deleteBtn.forEach((item)=>{
     card.remove();
   })
 })
+
 
 
 // function deleteCard(evt) {
