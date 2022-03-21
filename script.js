@@ -79,10 +79,6 @@ const initialCards = [
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
-  // {
-  //   name: 'Девушка',
-  //   link: 'https://img5.goodfon.ru/wallpaper/nbig/0/d2/vladimir-dudorkin-devushka-krasivaia-plate.jpg'
-  // }
   ];
 
 initialCards.forEach(function(element){
@@ -96,10 +92,10 @@ initialCards.forEach(function(element){
 
   function activeCard (initialCardsElement) {
     initialCardsElement.querySelector('.element__like-btn').addEventListener('click',(evt)=>{
-      evt.target.classList.toggle('.element__like_active-btn');
+      evt.target.classList.toggle('element__like_active-btn');
       });
-    initialCardsElement.querySelector('.element__del-btn').addEventListener('click,', (evt)=>{
-      const delElement = evt.target.querySelector.closest('.element');
+    initialCardsElement.querySelector('.element__del-btn').addEventListener('click', (evt)=>{
+      const delElement = evt.target.closest('.element');
       delElement.remove();
     });
 
@@ -151,7 +147,7 @@ popupFormAdd.addEventListener('submit', (evt)=>{
 
 // Удаление карточки
 
-deleteBtn.forEach((item)=>{
+deleteBtn.document.querySelectorAll('.element__del-btn').forEach((item)=>{
   item.addEventListener('click', (evt)=>{
     let delbtn = evt.target;
     let card = delbtn.closest('.element');
