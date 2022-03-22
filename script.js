@@ -29,6 +29,7 @@ function OpenAdd (){
 }
 addBtn.addEventListener('click', OpenAdd);
 
+
 function closePopup (){
   popup.forEach((item)=>{
     item.classList.remove('popup_open')
@@ -86,6 +87,7 @@ const initialCards = [
   }
   ];
 
+
 initialCards.forEach(function(element){
   const initialCardsElement = ElemTamplate.cloneNode(true);
 
@@ -103,6 +105,17 @@ initialCards.forEach(function(element){
       const delElement = evt.target.closest('.element');
       delElement.remove();
     });
+
+    const ImagePopup = document.querySelector('.popup_type_image');
+    const ElementImage = initialCardsElement.querySelector('.element__image');
+    const ElementTatle = initialCardsElement.querySelector('.element__title');
+    const ImageInPopup = document.querySelector('.popup__image');
+    const SubtitleInPopup = document.querySelector('.popup__subtitle');
+    ElementImage.addEventListener('click',()=>{
+      ImagePopup.classList.add('popup_open');
+      ImageInPopup.src = ElementImage.src;
+      SubtitleInPopup.textContent = ElementTatle.textContent;
+    })
 
   };
 // Добавляем карточки
@@ -126,7 +139,5 @@ popupFormAdd.addEventListener('submit', (evt)=>{
   closePopup();
   console.log(initialCards);
   });
-
-
 
 
