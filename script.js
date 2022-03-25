@@ -153,7 +153,7 @@ function submitAddCard (evt){
   elemList.prepend(card);
   inputNameCard.value = '';
   inputUrlCard.value = '';
-  closedPopup(popupFormAdd)
+  closedPopup(popupAdd)
 }
 
 
