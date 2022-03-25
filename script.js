@@ -18,6 +18,8 @@ const popupFormAdd = document.querySelector('.popup__form-add');
 const elemList = document.querySelector('.elements__list');
 const elemTamplate = document.getElementById('element-template').content;
 const closeImageBtn = document.querySelector('#close-image');
+const popupAdd = document.querySelector('.popup_type_add');
+const closeAddBtn = popupAdd.querySelector('#close-add');
 
 // ============================================================
 
@@ -135,9 +137,7 @@ closeImageBtn.addEventListener('click', () => {
 //======================================================================================
 
 //Открытие/закрытие попапа добавление карточки
-const popupAdd = document.querySelector('.popup_type_add');
-const closeAddBtn = popupAdd.querySelector('#close-add');
-console.log(closeAddBtn);
+
 addBtn.addEventListener('click', () => {
   openedPopup(popupAdd);
 });
