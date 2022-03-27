@@ -26,20 +26,20 @@ const closeAddBtn = popupAdd.querySelector('#close-add');
 //Попап открытие и закрытие
 
 //Функция открытия попапа
-function openedPopup (popup) {
+function openPopup (popup) {
   popup.classList.add('popup_open');
 }
 
 //Функция закрытия попапа
 
-function closedPopup (popup){
+function closePopup (popup){
   popup.classList.remove('popup_open');
 }
 
 //Открытие popupEdit
 
-function openedPopupEdit (popup) {
-  popup.classList.add('popup_open');
+function openPopupEdit () {
+  openPopup(popupEdit);
   inputName.value = profileName.textContent;
   inputBio.value = profileBio.textContent ;
 }
@@ -47,10 +47,10 @@ function openedPopupEdit (popup) {
 //Добавляем событие на кнопку открытия попапа/закрытия попапа Edit
 
 editBtn.addEventListener('click', () => {
-  openedPopupEdit(popupEdit);
+  openPopupEdit();
 })
 closeEditBtn.addEventListener('click', () => {
-  closedPopup(popupEdit);
+  closePopup(popupEdit);
 })
 
 // ============================================================
@@ -61,7 +61,7 @@ function submitProfileEdit (evt) {
   evt.preventDefault();
   profileName.textContent = `${inputName.value}`;
   profileBio.textContent = `${inputBio.value}`;
-  closedPopup(popupEdit);
+  closePopup(popupEdit);
 };
 
 popupFormProfileEdit.addEventListener('submit', submitProfileEdit);
@@ -71,12 +71,12 @@ popupFormProfileEdit.addEventListener('submit', submitProfileEdit);
 
 //Функция создания карточки
 
-function cardCreate (CardName , CardLink) {
+function createCard (cardName , cardLink) {
   cardData = elemTamplate.querySelector('.element').cloneNode(true);
   cardImageContent = cardData.querySelector('.element__image');
-  cardData.querySelector('.element__title').textContent = CardName;
-  cardImageContent.src = CardLink;
-  cardImageContent.alt = CardName;
+  cardData.querySelector('.element__title').textContent = cardName;
+  cardImageContent.src = cardLink;
+  cardImageContent.alt = cardName;
   cardData.querySelector('.element__like-btn').addEventListener('click',(evt)=>{
     evt.target.classList.toggle('element__like_active-btn');
     });
@@ -85,10 +85,10 @@ function cardCreate (CardName , CardLink) {
     delElement.remove();
     });
   cardImageContent.addEventListener('click', () => {
-    openedPopup(imagePopup);
-  document.querySelector('.popup__image').src = CardLink;
-  document.querySelector('.popup__subtitle').textContent = CardName
-  document.querySelector('.popup__image').alt = CardName;
+    openPopup(imagePopup);
+  document.querySelector('.popup__image').src = cardLink;
+  document.querySelector('.popup__subtitle').textContent = cardName
+  document.querySelector('.popup__image').alt = cardName;
   });
   return cardData;
 };
@@ -123,7 +123,7 @@ const initialCards = [
 // Добавляем карточки в разметку
 
 initialCards.forEach(function(element){
-  const card = cardCreate(element.name, element.link);
+  const card = createCard(element.name, element.link);
   elemList.append(card);
 });
 
@@ -132,28 +132,28 @@ initialCards.forEach(function(element){
 
 
 closeImageBtn.addEventListener('click', () => {
-  closedPopup(imagePopup);
+  closePopup(imagePopup);
 });
 //======================================================================================
 
 //Открытие/закрытие попапа добавление карточки
 
 addBtn.addEventListener('click', () => {
-  openedPopup(popupAdd);
+  openPopup(popupAdd);
 });
 closeAddBtn.addEventListener('click', () => {
-  closedPopup(popupAdd);
+  closePopup(popupAdd);
 })
 
 // Добавляем карточки с кнопки
 
 function submitAddCard (evt){
   evt.preventDefault();
-  const card = cardCreate(inputNameCard.value, inputUrlCard.value);
+  const card = createCard(inputNameCard.value, inputUrlCard.value);
   elemList.prepend(card);
   inputNameCard.value = '';
   inputUrlCard.value = '';
-  closedPopup(popupAdd)
+  closePopup(popupAdd)
 }
 
 
