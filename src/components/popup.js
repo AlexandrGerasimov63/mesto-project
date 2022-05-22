@@ -8,6 +8,7 @@ function submitProfileEdit (evt) {
   evt.preventDefault();
   profileName.textContent = `${inputName.value}`;
   profileBio.textContent = `${inputBio.value}`;
+  evt.target.reset();
   closePopup(popupEdit);
 };
 
