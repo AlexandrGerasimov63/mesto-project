@@ -1,6 +1,9 @@
 import {imagePopup, elemTamplate} from './data';
 import {openPopup} from './utils';
 
+const popupImage = document.querySelector('.popup__image');
+const popupSubtitle = document.querySelector('.popup__subtitle');
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -48,9 +51,9 @@ function createCard (cardName , cardLink) {
     });
   cardImageContent.addEventListener('click', () => {
     openPopup(imagePopup);
-  document.querySelector('.popup__image').src = cardLink;
-  document.querySelector('.popup__subtitle').textContent = cardName
-  document.querySelector('.popup__image').alt = cardName;
+  popupImage.src = cardLink;
+  popupSubtitle.textContent = cardName
+  popupImage.alt = cardName;
   });
   return cardData;
 };

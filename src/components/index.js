@@ -40,12 +40,8 @@ editBtn.addEventListener('click', () => {
 })
 closeEditBtn.addEventListener('click', () => {
   closePopup(popupEdit);
-  inputName.value = '';
-  inputBio.value = '';
 })
-// События попапов
-document.addEventListener('keydown' , closePopupEvt);
-document.addEventListener('click', closePopupEvt);
+
 // Функция сохранения значения инпутов
 popupFormProfileEdit.addEventListener('submit', submitProfileEdit);
 //Функция создания карточки
