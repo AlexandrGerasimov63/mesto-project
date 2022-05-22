@@ -1,5 +1,5 @@
 import {inputName,inputBio,profileName,profileBio,popupEdit} from './data.js';
-import {enableValidation} from './validation.js';
+
 //Попап открытие и закрытие
 
 //Функция открытия попапа
