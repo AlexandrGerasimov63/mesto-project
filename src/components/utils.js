@@ -26,8 +26,8 @@ function openPopupEdit () {
 }
 
 function handleEscape (evt){
-  const openedPopup = document.querySelector('.popup_open');
   if(evt.key==="Escape"){
+    const openedPopup = document.querySelector('.popup_open');
     openedPopup && closePopup(openedPopup);
   }
   return
