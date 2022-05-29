@@ -1,7 +1,3 @@
-import {profileName,profileBio,elemList,avatarImg} from './data'
-import {createCard} from './card';
-
-
 
 const config = {
   url:'https://nomoreparties.co/v1/plus-cohort-10/',
@@ -95,16 +91,6 @@ function getDeleteCard (id) {
   .then(response)
 }
 
-Promise.all([getUser(),getInitialCards()])
-  .then(([dataUser, dataCard])=>{
-    profileName.textContent=dataUser.name;
-    profileBio.textContent=dataUser.about;
-    avatarImg.src=dataUser.avatar;
-    dataCard.forEach((card)=>{
-      const cards = createCard(card.name, card.link, card.likes, card.owner._id, card._id, dataUser._id);
-      elemList.append(cards)
-    })
-  })
-  .catch((err)=>{console.log(err)});
+
 
 export {getEditProfile,getEditAvatar,getNewCard,getDeleteCard,getUser, getInitialCards, getPutLikes,getDelLike}

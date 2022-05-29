@@ -5,8 +5,9 @@ import {addBtn,
   editBtn,
   imagePopup,
   popupFormProfileEdit,
-  inputName,
-  inputBio,
+  profileName,
+  profileBio,
+  avatarImg,
   popupEdit,
   closeEditBtn,
   popupFormAdd,
@@ -28,7 +29,7 @@ import {submitProfileEdit, submitAddCard, submitAvatar} from './popup';
 
 import {createCard, initialCards} from './card';
 
-import {getInitialCards} from './api'
+import {getInitialCards, getUser} from './api'
 // ============================================================
 
 enableValidation({
@@ -81,3 +82,15 @@ closeAddBtn.addEventListener('click', () => {
 popupFormAdd.addEventListener('submit', submitAddCard);
 
 popupFormAvatar.addEventListener('submit', submitAvatar);
+
+Promise.all([getUser(),getInitialCards()])
+  .then(([dataUser, dataCard])=>{
+    profileName.textContent=dataUser.name;
+    profileBio.textContent=dataUser.about;
+    avatarImg.src=dataUser.avatar;
+    dataCard.forEach((card)=>{
+      const cards = createCard(card.name, card.link, card.likes, card.owner._id, card._id, dataUser._id);
+      elemList.append(cards)
+    })
+  })
+  .catch((err)=>{console.log(err)});

@@ -51,9 +51,9 @@ function submitAddCard (evt){
 function submitAvatar (evt) {
   evt.preventDefault();
   loading(true,submitAvatarBtn)
-  avatarImg.src=avatarInput.value
   getEditAvatar(avatarInput.value)
-    .then(()=>{
+  .then(()=>{
+      avatarImg.src=avatarInput.value
       closePopup(popupAvatar);
       disabledBtn(submitAvatarBtn);
       evt.target.reset();
