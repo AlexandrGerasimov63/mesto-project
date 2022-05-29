@@ -44,4 +44,13 @@ function disabledBtn (btn) {
   btn.disabled = true;
 }
 
-export {openPopup,closePopup,openPopupEdit,disabledBtn};
+
+function loading (isLoading, button) {
+ if(isLoading){
+   button.textContent='Сохранение...'
+ } else {
+   button.textContent='Сохранить'
+ }
+}
+
+export {openPopup,closePopup,openPopupEdit,disabledBtn, loading};

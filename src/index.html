@@ -13,10 +13,12 @@
     </header>
     <main class="page__main-content">
       <section class="profile">
-        <img src="<%=require('./images/avatar.jpg')%>" alt="Аватар" class="profile__avatar">
+        <button class="profile__avatar-btn">
+          <img src="<%=require('./images/avatar.jpg')%>" alt="Аватар" class="profile__avatar">
+        </button>
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <p class="profile__subtitle">Исследователь океана</p>
+          <h1 class="profile__name"></h1>
+          <p class="profile__subtitle"></p>
           <button class="profile__edit-btn" type="button" aria-label="Редактировать профиль"></button>
         </div>
         <button class="profile__add-btn" type="button" aria-label="Добавить фотографию"></button>
@@ -76,6 +78,19 @@
         <h3 class="popup__subtitle"></h3>
       </div>
     </div>
+    <div class="popup popup_type_avatar">
+      <div class="popup__container">
+      <button class="popup__close-btn" id="close-avatar" type="button" aria-label="Закрыть форму"></button>
+        <form class="popup__form-avatar" name="avatar-form" novalidate id="form">
+          <h3 class="popup__title">Обновить аватар</h3>
+          <fieldset class="popup__input-container">
+              <input type="url" id="avatar-url" name="link" placeholder="Ссылка на аватар" class="popup__item"
+                required>
+              <p class="popup-error" id="avatar-url-error"></p>
+          </fieldset>
+          <button class="popup__save-btn" type="submit" aria-label="Сохранить" id="submit-avatar">Сохранить</button>
+      </div>
+    </div>
   </div>
   <template id="element-template">
     <li class="element">
@@ -83,7 +98,10 @@
       <img src="#" alt="Название" class="element__image">
       <div class="element__footer">
         <h3 class="element__title"></h3>
-        <button class="element__like-btn" type="button" aria-label="Добавить лайк"></button>
+        <div class="element__like-container">
+          <button class="element__like-btn" type="button" aria-label="Добавить лайк"></button>
+          <span class="element__like-acc">0</span>
+        </div>
       </div>
     </li>
   </template>

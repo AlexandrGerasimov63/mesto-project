@@ -19,6 +19,13 @@ const elemTamplate = document.getElementById('element-template').content;
 const closeImageBtn = document.querySelector('#close-image');
 const popupAdd = document.querySelector('.popup_type_add');
 const closeAddBtn = popupAdd.querySelector('#close-add');
+const popupAvatar = document.querySelector('.popup_type_avatar');
+const avatarBtn = document.querySelector('.profile__avatar-btn');
+const closeAvatarBtn = popupAvatar.querySelector('#close-avatar');
+const submitAvatarBtn = popupAvatar.querySelector('#submit-avatar');
+const avatarInput = popupAvatar.querySelector('#avatar-url');
+const avatarImg = document.querySelector('.profile__avatar');
+const popupFormAvatar = popupAvatar.querySelector('.popup__form-avatar');
 
 export {
   addBtn,
@@ -41,5 +48,12 @@ export {
   elemTamplate,
   closeImageBtn,
   popupAdd,
-  closeAddBtn
+  closeAddBtn,
+  popupAvatar,
+  avatarBtn,
+  closeAvatarBtn,
+  submitAvatarBtn,
+  avatarInput,
+  avatarImg,
+  popupFormAvatar
 }
