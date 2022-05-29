@@ -21,13 +21,13 @@ import {addBtn,
   popupFormAvatar
 } from './data.js'
 
-import {openPopup,closePopup,openPopupEdit,closePopupEvt} from './utils.js'
+import {openPopup,closePopup,openPopupEdit} from './utils.js'
 
 import {enableValidation} from './validation.js';
 
 import {submitProfileEdit, submitAddCard, submitAvatar} from './popup';
 
-import {createCard, initialCards} from './card';
+import {createCard} from './card';
 
 import {getInitialCards, getUser} from './api'
 // ============================================================
