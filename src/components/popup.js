@@ -30,7 +30,6 @@ function submitAddCard (evt){
   loading(true, btnAdd)
   Promise.all([getNewCard(inputNameCard.value, inputUrlCard.value), getUser()])
     .then(([dataCard, dataUser])=>{
-      console.log(dataCard)
       const card = createCard(dataCard.name, dataCard.link, dataCard.likes, dataCard.owner._id,dataCard._id,dataUser._id);
       elemList.prepend(card);
     })
